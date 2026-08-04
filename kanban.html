@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <title>TaskFlow | Kanban</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    </script>
+
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-list-check"></i>
+
+        TaskFlow
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+
+        <li><a href="dashboard.html">Dashboard</a></li>
+
+        <li><a href="projects.html">Projects</a></li>
+
+        <li><a href="tasks.html">Tasks</a></li>
+
+        <li><a href="kanban.html" class="active">Kanban</a></li>
+
+        <li><a href="team.html">Team</a></li>
+
+        <li><a href="calendar.html">Calendar</a></li>
+
+        <li><a href="analytics.html">Analytics</a></li>
+
+        <li><a href="notifications.html">Notifications</a></li>
+
+        <li><a href="settings.html">Settings</a></li>
+      </ul>
+
+      <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </nav>
+
+    <section class="page-header">
+      <h1>Kanban Board</h1>
+
+      <p>Manage tasks visually with workflow columns.</p>
+    </section>
+
+    <section class="kanban-container">
+      <div class="kanban-column todo">
+        <h2>📝 To Do</h2>
+
+        <div id="todo"></div>
+      </div>
+
+      <div class="kanban-column progress">
+        <h2>🚀 In Progress</h2>
+
+        <div id="inProgress"></div>
+      </div>
+
+      <div class="kanban-column completed">
+        <h2>✅ Completed</h2>
+
+        <div id="completed"></div>
+      </div>
+    </section>
+    <footer>
+      <p>© 2026 TaskFlow</p>
+    </footer>
+
+    <script src="theme.js"></script>
+    <script src="kanban.js"></script>
+  </body>
+</html>

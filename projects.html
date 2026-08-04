@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <title>TaskFlow | Projects</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    </script>
+
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-list-check"></i>
+        TaskFlow
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+
+        <li><a href="dashboard.html">Dashboard</a></li>
+
+        <li><a href="projects.html" class="active">Projects</a></li>
+
+        <li><a href="tasks.html">Tasks</a></li>
+
+        <li><a href="kanban.html">Kanban</a></li>
+
+        <li><a href="team.html">Team</a></li>
+
+        <li><a href="calendar.html">Calendar</a></li>
+
+        <li><a href="analytics.html">Analytics</a></li>
+
+        <li><a href="notifications.html">Notifications</a></li>
+
+        <li><a href="settings.html">Settings</a></li>
+      </ul>
+
+      <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </nav>
+
+    <section class="page-header">
+      <h1>Project Management</h1>
+
+      <p>Create and manage all your projects in one place.</p>
+    </section>
+
+    <section class="project-container">
+      <div class="project-form">
+        <h2>Create Project</h2>
+
+        <input type="text" id="projectName" placeholder="Project Name" />
+
+        <textarea
+          id="projectDescription"
+          placeholder="Project Description"
+        ></textarea>
+
+        <select id="projectPriority">
+          <option value="High">High Priority</option>
+
+          <option value="Medium">Medium Priority</option>
+
+          <option value="Low">Low Priority</option>
+        </select>
+
+        <select id="projectStatus">
+          <option value="Planning">Planning</option>
+
+          <option value="Active">Active</option>
+
+          <option value="Completed">Completed</option>
+        </select>
+
+        <button id="addProject">Create Project</button>
+      </div>
+      <div class="project-list">
+        <h2>Your Projects</h2>
+
+        <div id="projects"></div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 TaskFlow</p>
+    </footer>
+
+    <script src="theme.js"></script>
+    <script src="projects.js"></script>
+  </body>
+</html>

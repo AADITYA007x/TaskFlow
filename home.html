@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow | Home</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    </script>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <i class="fa-solid fa-list-check"></i>
+          <span>TaskFlow</span>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="home.html" class="active">Home</a></li>
+
+          <li><a href="dashboard.html">Dashboard</a></li>
+
+          <li><a href="projects.html">Projects</a></li>
+
+          <li><a href="tasks.html">Tasks</a></li>
+
+          <li><a href="kanban.html">Kanban</a></li>
+
+          <li><a href="team.html">Team</a></li>
+
+          <li><a href="calendar.html">Calendar</a></li>
+
+          <li><a href="analytics.html">Analytics</a></li>
+
+          <li><a href="notifications.html">Notifications</a></li>
+
+          <li><a href="settings.html">Settings</a></li>
+        </ul>
+
+        <div class="nav-buttons">
+          <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+
+          <a href="#" class="login-btn">Login</a>
+
+          <a href="dashboard.html" class="start-btn"> Get Started </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+      <div class="hero-text">
+        <h1>
+          Manage Projects
+
+          <span>Smarter.</span>
+        </h1>
+
+        <p>
+          Manage projects, track tasks, assign work, monitor progress and
+          collaborate efficiently from one place.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="dashboard.html" class="btn"> Get Started </a>
+
+          <a href="#about" class="btn-outline"> Learn More </a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="assets/images/hero.png" alt="Project Management" />
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about" id="about">
+      <h2>About TaskFlow</h2>
+
+      <p>
+        TaskFlow is a project management platform that helps individuals and
+        teams manage projects, organize daily tasks, monitor deadlines and
+        improve productivity using an easy-to-use dashboard and Kanban board.
+      </p>
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="features">
+      <h2>Features</h2>
+
+      <div class="feature-container">
+        <div class="feature-card">
+          <i class="fa-solid fa-folder"></i>
+
+          <h3>Project Management</h3>
+
+          <p>Create and organize unlimited projects.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fa-solid fa-list-check"></i>
+
+          <h3>Task Tracking</h3>
+
+          <p>Add, edit and monitor every task easily.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fa-solid fa-table-columns"></i>
+
+          <h3>Kanban Board</h3>
+
+          <p>Visualize project workflow efficiently.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fa-solid fa-chart-line"></i>
+
+          <h3>Analytics</h3>
+
+          <p>Track progress with useful statistics.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fa-solid fa-users"></i>
+
+          <h3>Team Management</h3>
+
+          <p>Assign work and collaborate together.</p>
+        </div>
+
+        <div class="feature-card">
+          <i class="fa-solid fa-bell"></i>
+
+          <h3>Notifications</h3>
+
+          <p>Never miss an important deadline.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+
+    <section class="workflow">
+      <h2>How It Works</h2>
+
+      <div class="steps">
+        <div class="step">
+          <h3>1</h3>
+          <p>Create Project</p>
+        </div>
+
+        <div class="step">
+          <h3>2</h3>
+          <p>Add Tasks</p>
+        </div>
+
+        <div class="step">
+          <h3>3</h3>
+          <p>Track Progress</p>
+        </div>
+
+        <div class="step">
+          <h3>4</h3>
+          <p>Complete Project</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STATS ================= -->
+
+    <section class="stats">
+      <div class="stat">
+        <h2>100</h2>
+        <p>Tasks Managed</p>
+
+        <h2>10</h2>
+        <p>Features</p>
+
+        <h2>100</h2>
+        <p>Responsive Design</p>
+
+        <h2>24</h2>
+        <p>Accessibility</p>
+
+        <p>Tasks Managed</p>
+      </div>
+
+      <div class="stat">
+        <h2>10+</h2>
+
+        <p>Powerful Features</p>
+      </div>
+
+      <div class="stat">
+        <h2>100%</h2>
+
+        <p>Responsive Design</p>
+      </div>
+
+      <div class="stat">
+        <h2>24/7</h2>
+
+        <p>Accessibility</p>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="contact">
+      <h2>Contact Us</h2>
+
+      <form>
+        <input type="text" placeholder="Your Name" />
+
+        <input type="email" placeholder="Email" />
+
+        <textarea rows="6" placeholder="Message"></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+      <p>© 2026 TaskFlow | Designed by Aaditya</p>
+    </footer>
+
+    <script src="theme.js"></script>
+    <script src="home.js"></script>
+  </body>
+</html>

@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>TaskFlow | Dashboard</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    </script>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-list-check"></i>
+
+        TaskFlow
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+
+        <li><a href="projects.html">Projects</a></li>
+
+        <li><a href="tasks.html">Tasks</a></li>
+
+        <li><a href="kanban.html">Kanban</a></li>
+
+        <li><a href="team.html">Team</a></li>
+
+        <li><a href="calendar.html">Calendar</a></li>
+
+        <li><a href="analytics.html">Analytics</a></li>
+
+        <li><a href="notifications.html">Notifications</a></li>
+        <li><a href="settings.html">Settings</a></li>
+      </ul>
+
+      <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </nav>
+    <!-- ================= DASHBOARD HEADER ================= -->
+
+    <section class="dashboard-header">
+      <div>
+        <h1>Welcome Back 👋</h1>
+
+        <p>Manage your projects, track tasks and improve productivity.</p>
+      </div>
+
+      <div class="dashboard-buttons">
+        <a href="projects.html" class="btn">
+          <i class="fa-solid fa-plus"></i>
+          Create Project
+        </a>
+
+        <a href="tasks.html" class="btn-outline">
+          <i class="fa-solid fa-list"></i>
+          Add Task
+        </a>
+      </div>
+    </section>
+    <!-- ================= STAT CARDS ================= -->
+
+    <section class="dashboard-stats">
+      <div class="dashboard-card blue">
+        <i class="fa-solid fa-folder"></i>
+
+        <div>
+          <h3 id="projectCount">0</h3>
+
+          <p>Active Projects</p>
+        </div>
+      </div>
+      <div class="dashboard-card green">
+        <i class="fa-solid fa-list-check"></i>
+
+        <div>
+          <h3 id="taskCount">0</h3>
+
+          <p>Total Tasks</p>
+        </div>
+      </div>
+      <div class="dashboard-card purple">
+        <i class="fa-solid fa-circle-check"></i>
+
+        <div>
+          <h3 id="completedCount">0</h3>
+
+          <p>Completed Tasks</p>
+        </div>
+      </div>
+      <div class="dashboard-card orange">
+        <i class="fa-solid fa-clock"></i>
+
+        <div>
+          <h3 id="pendingCount">0</h3>
+
+          <p>Pending Tasks</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MAIN DASHBOARD ================= -->
+
+    <section class="dashboard-grid">
+      <!-- Progress -->
+      <div class="dashboard-box">
+        <h2>Progress Overview</h2>
+
+        <div class="progress-bar">
+          <div class="progress" id="progressBar"></div>
+        </div>
+
+        <h3 id="progressText">0% Completed</h3>
+      </div>
+
+      <!-- Deadlines -->
+
+      <div class="dashboard-box">
+        <h2>Upcoming Deadlines</h2>
+        <ul class="deadline-list">
+          <li>
+            Website Design
+            <span> Tomorrow </span>
+          </li>
+
+          <li>
+            Database Project
+            <span> Friday </span>
+          </li>
+
+          <li>
+            Presentation
+            <span> Next Week </span>
+          </li>
+        </ul>
+      </div>
+      <!-- Activity -->
+
+      <div class="dashboard-box">
+        <h2>Recent Activity</h2>
+
+        <ul>
+          <li>✔ Project Created</li>
+
+          <li>✔ Task Completed</li>
+
+          <li>✔ Member Added</li>
+        </ul>
+      </div>
+
+      <!-- Quick Actions -->
+
+      <div class="dashboard-box">
+        <h2>Quick Actions</h2>
+
+        <div class="quick-actions">
+          <a href="projects.html"> Projects </a>
+
+          <a href="tasks.html"> Tasks </a>
+
+          <a href="kanban.html"> Kanban </a>
+
+          <a href="analytics.html"> Analytics </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 TaskFlow | Project Management System</p>
+    </footer>
+    <script src="theme.js"></script>
+    <script src="dashboard.js"></script>
+  </body>
+</html>

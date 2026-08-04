@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <title>TaskFlow | Team</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    </script>
+
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-list-check"></i>
+
+        TaskFlow
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+
+        <li><a href="dashboard.html">Dashboard</a></li>
+
+        <li><a href="projects.html">Projects</a></li>
+
+        <li><a href="tasks.html">Tasks</a></li>
+
+        <li><a href="kanban.html">Kanban</a></li>
+
+        <li><a href="team.html" class="active">Team</a></li>
+
+        <li><a href="calendar.html">Calendar</a></li>
+
+        <li><a href="analytics.html">Analytics</a></li>
+
+        <li><a href="notifications.html">Notifications</a></li>
+
+        <li><a href="settings.html">Settings</a></li>
+      </ul>
+
+      <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </nav>
+
+    <section class="page-header">
+      <h1>Team Management</h1>
+
+      <p>Manage your team members and assignments.</p>
+    </section>
+
+    <section class="team-container">
+      <div class="team-form">
+        <h2>Add Member</h2>
+
+        <input type="text" id="memberName" placeholder="Member Name" />
+
+        <input type="email" id="memberEmail" placeholder="Email" />
+
+        <select id="memberRole">
+          <option>Developer</option>
+
+          <option>Designer</option>
+
+          <option>Manager</option>
+
+          <option>Tester</option>
+        </select>
+
+        <select id="assignedTask">
+          <option>No Task Assigned</option>
+        </select>
+
+        <button id="addMember">Add Member</button>
+      </div>
+
+      <div class="team-list">
+        <h2>Team Members</h2>
+
+        <div id="members"></div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 TaskFlow</p>
+    </footer>
+
+    <script src="theme.js"></script>
+    <script src="team.js"></script>
+  </body>
+</html>
