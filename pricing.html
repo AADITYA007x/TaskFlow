@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <title>TaskFlow | Pricing</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    </script>
+
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-list-check"></i>
+
+        TaskFlow
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+
+        <li><a href="dashboard.html">Dashboard</a></li>
+
+        <li><a href="projects.html">Projects</a></li>
+
+        <li><a href="tasks.html">Tasks</a></li>
+
+        <li><a href="kanban.html">Kanban</a></li>
+
+        <li><a href="team.html">Team</a></li>
+
+        <li><a href="calendar.html">Calendar</a></li>
+
+        <li><a href="analytics.html">Analytics</a></li>
+
+        <li><a href="notifications.html">Notifications</a></li>
+
+        <li><a href="settings.html">Settings</a></li>
+      </ul>
+
+      <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </nav>
+
+    <section class="page-header">
+      <h1>Plans & Pricing</h1>
+
+      <p>Pick the plan that fits your team. Upgrade any time.</p>
+    </section>
+
+    <section class="pricing-container">
+      <div class="billing-toggle">
+        <span class="billing-label active" id="monthlyLabel">Monthly</span>
+
+        <button
+          id="billingSwitch"
+          class="billing-switch"
+          aria-label="Toggle yearly billing"
+        >
+          <span class="billing-knob"></span>
+        </button>
+
+        <span class="billing-label" id="yearlyLabel">
+          Yearly <span class="save-badge">Save 20%</span>
+        </span>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card" data-plan="starter">
+          <h2>Starter</h2>
+
+          <p class="plan-tagline">For individuals getting organized.</p>
+
+          <div class="price">
+            <span class="amount" data-monthly="0" data-yearly="0">$0</span>
+            <span class="period">/month</span>
+          </div>
+
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-check"></i> Up to 3 projects</li>
+
+            <li><i class="fa-solid fa-check"></i> Basic task management</li>
+
+            <li><i class="fa-solid fa-check"></i> Kanban board</li>
+
+            <li><i class="fa-solid fa-check"></i> 1 team member</li>
+
+            <li><i class="fa-solid fa-check"></i> Community support</li>
+          </ul>
+
+          <button class="btn-outline choose-plan" data-plan="Starter" data-price="0">
+            Get Started Free
+          </button>
+        </div>
+
+        <div class="pricing-card popular" data-plan="pro">
+          <span class="popular-badge">Most Popular</span>
+
+          <h2>Pro</h2>
+
+          <p class="plan-tagline">For teams that need to move faster.</p>
+
+          <div class="price">
+            <span class="amount" data-monthly="12" data-yearly="10">$12</span>
+            <span class="period">/month</span>
+          </div>
+
+          <ul class="plan-features">
+            <li>
+              <i class="fa-solid fa-check"></i>
+              <b>Everything in Starter, plus:</b>
+            </li>
+
+            <li><i class="fa-solid fa-check"></i> Unlimited projects</li>
+
+            <li><i class="fa-solid fa-check"></i> Up to 10 team members</li>
+
+            <li><i class="fa-solid fa-check"></i> Advanced analytics & charts</li>
+
+            <li><i class="fa-solid fa-check"></i> Calendar sync & reminders</li>
+
+            <li><i class="fa-solid fa-check"></i> Priority email support</li>
+          </ul>
+
+          <button class="btn choose-plan" data-plan="Pro" data-price="12">
+            Upgrade to Pro
+          </button>
+        </div>
+
+        <div class="pricing-card" data-plan="enterprise">
+          <h2>Enterprise</h2>
+
+          <p class="plan-tagline">For organizations that need control.</p>
+
+          <div class="price">
+            <span class="amount" data-monthly="29" data-yearly="24">$29</span>
+            <span class="period">/month</span>
+          </div>
+
+          <ul class="plan-features">
+            <li>
+              <i class="fa-solid fa-check"></i>
+              <b>Everything in Pro, plus:</b>
+            </li>
+
+            <li><i class="fa-solid fa-check"></i> Unlimited team members</li>
+
+            <li><i class="fa-solid fa-check"></i> Custom roles & permissions</li>
+
+            <li><i class="fa-solid fa-check"></i> Advanced security & audit logs</li>
+
+            <li><i class="fa-solid fa-check"></i> Dedicated account manager</li>
+
+            <li><i class="fa-solid fa-check"></i> API access</li>
+          </ul>
+
+          <button class="btn-outline choose-plan" data-plan="Enterprise" data-price="29">
+            Upgrade to Enterprise
+          </button>
+        </div>
+      </div>
+
+      <div class="plan-note">
+        <i class="fa-solid fa-circle-info"></i>
+        This is a demo pricing flow — no real payment is processed.
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 TaskFlow</p>
+    </footer>
+
+    <script src="theme.js"></script>
+    <script src="pricing.js"></script>
+  </body>
+</html>

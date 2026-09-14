@@ -1742,41 +1742,15 @@ TASK PAGE
 
 .task-badge {
 
-    display: inline-block;
-
     padding: 6px 15px;
 
     border-radius: 20px;
 
     font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.01em;
+
     background: #e0e7ff;
-    color: #312e81;
 
-}
-
-.task-status-todo {
-
-    background: #dbeafe;
-
-    color: #1d4ed8;
-
-}
-
-.task-status-in-progress {
-
-    background: #cffafe;
-
-    color: #0f766e;
-
-}
-
-.task-status-completed {
-
-    background: #dcfce7;
-
-    color: #166534;
+    color: #4338ca;
 
 }
 
@@ -1804,7 +1778,8 @@ TASK PAGE
 
 }
 
-.task-complete {
+.task-complete h3,
+.task-complete > p {
 
     text-decoration: line-through;
 
@@ -2238,6 +2213,12 @@ SETTINGS
 
     padding:50px 8%;
 
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 24px;
+
 }
 .settings-card{
 
@@ -2337,16 +2318,19 @@ SETTINGS
 /* Typography */
 
 .dark-mode h1,
-.dark-mode h2,
-.dark-mode h3 {
+.dark-mode h2 {
 
     color: #f8fafc;
 
 }
 
+/* h3 is left alone here — card titles (task/project/member/kanban)
+   carry their own brand accent color and already read fine on dark
+   surfaces; overriding it here previously flattened them all to grey. */
+
 .dark-mode p,
-.dark-mode span,
-.dark-mode li {
+.dark-mode li,
+.dark-mode span:not(.priority):not(.status):not(.task-badge):not(.kanban-badge):not(.member-role):not(.date-badge):not(.popular-badge):not(.save-badge):not(.summary-price):not(.current-plan-name) {
 
     color: #cbd5e1;
 
@@ -2448,40 +2432,6 @@ SETTINGS
 
 }
 
-.dark-mode .task-badge {
-
-    background: #1e293b;
-
-    color: #f8fafc;
-
-    border-color: rgba(148, 163, 184, 0.3);
-
-}
-
-.dark-mode .task-status-todo {
-
-    background: #1e3a8a;
-
-    color: #dbeafe;
-
-}
-
-.dark-mode .task-status-in-progress {
-
-    background: #78350f;
-
-    color: #fef3c7;
-
-}
-
-.dark-mode .task-status-completed {
-
-    background: #14532d;
-
-    color: #dcfce7;
-
-}
-
 .dark-mode .progress-bar,
 .dark-mode .project-progress {
 
@@ -2520,5 +2470,904 @@ textarea,
 select {
 
     transition: background .3s ease, color .3s ease, border-color .3s ease;
+
+}
+
+/* ===========================================
+   PRICING PAGE
+=========================================== */
+
+.pricing-container {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 60px 7% 100px;
+
+}
+
+.billing-toggle {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 16px;
+
+    margin-bottom: 50px;
+
+}
+
+.billing-label {
+
+    font-weight: 500;
+
+    color: var(--gray);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+.billing-label.active {
+
+    color: var(--text);
+
+    font-weight: 600;
+
+}
+
+.save-badge {
+
+    background: #dcfce7;
+
+    color: #16a34a;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    padding: 3px 9px;
+
+    border-radius: 20px;
+
+}
+
+.billing-switch {
+
+    width: 52px;
+
+    height: 28px;
+
+    border-radius: 20px;
+
+    border: none;
+
+    background: #cbd5e1;
+
+    cursor: pointer;
+
+    position: relative;
+
+    padding: 0;
+
+    transition: background .25s ease;
+
+}
+
+.billing-switch.on {
+
+    background: var(--primary);
+
+}
+
+.billing-knob {
+
+    position: absolute;
+
+    top: 3px;
+
+    left: 3px;
+
+    width: 22px;
+
+    height: 22px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    transition: transform .25s ease;
+
+}
+
+.billing-switch.on .billing-knob {
+
+    transform: translateX(24px);
+
+}
+
+.pricing-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+    align-items: stretch;
+
+}
+
+.pricing-card {
+
+    background: var(--card);
+
+    border-radius: 18px;
+
+    padding: 36px 28px;
+
+    box-shadow: var(--shadow);
+
+    border: 2px solid transparent;
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    transition: transform .25s ease, border-color .25s ease;
+
+}
+
+.pricing-card:hover {
+
+    transform: translateY(-6px);
+
+}
+
+.pricing-card.popular {
+
+    border-color: var(--primary);
+
+}
+
+.popular-badge {
+
+    position: absolute;
+
+    top: -14px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: var(--primary);
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    padding: 5px 16px;
+
+    border-radius: 20px;
+
+    white-space: nowrap;
+
+}
+
+.pricing-card h2 {
+
+    font-size: 24px;
+
+    margin-bottom: 6px;
+
+}
+
+.plan-tagline {
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+
+    min-height: 36px;
+
+}
+
+.price {
+
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 6px;
+
+    margin-bottom: 26px;
+
+}
+
+.price .amount {
+
+    font-size: 40px;
+
+    font-weight: 700;
+
+    color: var(--text);
+
+}
+
+.price .period {
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+}
+
+.plan-features {
+
+    list-style: none;
+
+    flex: 1;
+
+    margin-bottom: 28px;
+
+}
+
+.plan-features li {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    padding: 8px 0;
+
+    font-size: 14px;
+
+    color: var(--text);
+
+}
+
+.plan-features li i {
+
+    color: var(--success);
+
+    margin-top: 3px;
+
+    flex-shrink: 0;
+
+}
+
+.plan-features li b {
+
+    color: var(--primary);
+
+}
+
+.pricing-card .btn,
+.pricing-card .btn-outline {
+
+    width: 100%;
+
+    text-align: center;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+}
+
+.pricing-card .btn-outline {
+
+    border: 2px solid var(--primary);
+
+    color: var(--primary);
+
+    background: transparent;
+
+    margin-left: 0;
+
+}
+
+.pricing-card .btn-outline:hover {
+
+    background: var(--primary);
+
+    color: white;
+
+}
+
+.pricing-card.current-plan {
+
+    border-color: var(--success);
+
+}
+
+.pricing-card .choose-plan:disabled {
+
+    opacity: .7;
+
+    cursor: default;
+
+}
+
+.plan-note {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 40px;
+
+    color: var(--gray);
+
+    font-size: 13px;
+
+}
+
+/* ===========================================
+   PAYMENT / CHECKOUT PAGE
+=========================================== */
+
+.payment-container {
+
+    display: grid;
+
+    grid-template-columns: 1.3fr 1fr;
+
+    gap: 30px;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 50px 7% 100px;
+
+    align-items: start;
+
+}
+
+.payment-form-box,
+.order-summary-box {
+
+    background: var(--card);
+
+    border-radius: 16px;
+
+    padding: 32px;
+
+    box-shadow: var(--shadow);
+
+}
+
+.payment-form-box h2,
+.order-summary-box h2 {
+
+    font-size: 20px;
+
+    margin-bottom: 20px;
+
+}
+
+.payment-methods {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 24px;
+
+}
+
+.payment-method-btn {
+
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    border: 2px solid var(--background);
+
+    background: var(--background);
+
+    color: var(--gray);
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition: border-color .2s ease, color .2s ease;
+
+}
+
+.payment-method-btn.active {
+
+    border-color: var(--primary);
+
+    color: var(--primary);
+
+    background: #eef2ff;
+
+}
+
+.payment-fields {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    margin-bottom: 20px;
+
+}
+
+.payment-fields.hidden {
+
+    display: none;
+
+}
+
+.payment-fields input {
+
+    width: 100%;
+
+    padding: 13px 16px;
+
+    border-radius: 10px;
+
+    border: 1px solid #e2e8f0;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+}
+
+.field-row {
+
+    display: flex;
+
+    gap: 14px;
+
+}
+
+.field-row input {
+
+    flex: 1;
+
+}
+
+.field-hint {
+
+    font-size: 13px;
+
+    color: var(--gray);
+
+    line-height: 1.5;
+
+}
+
+.pay-btn {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    padding: 14px;
+
+}
+
+.pay-btn:disabled {
+
+    opacity: .75;
+
+    cursor: default;
+
+}
+
+.demo-note {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 16px;
+
+    font-size: 12px;
+
+    color: var(--gray);
+
+    text-align: center;
+
+}
+
+.summary-plan {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: baseline;
+
+    margin-bottom: 4px;
+
+}
+
+.summary-plan h3 {
+
+    font-size: 18px;
+
+}
+
+.summary-price {
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: var(--primary);
+
+}
+
+.summary-price small {
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+    color: var(--gray);
+
+}
+
+.summary-cycle {
+
+    font-size: 13px;
+
+    color: var(--gray);
+
+    margin-bottom: 20px;
+
+}
+
+.summary-perks {
+
+    list-style: none;
+
+    border-top: 1px solid var(--background);
+
+    border-bottom: 1px solid var(--background);
+
+    padding: 16px 0;
+
+    margin-bottom: 20px;
+
+}
+
+.summary-perks li {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 6px 0;
+
+    font-size: 14px;
+
+}
+
+.summary-perks li i {
+
+    color: var(--success);
+
+}
+
+.summary-total {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-size: 16px;
+
+}
+
+.summary-total b {
+
+    font-size: 22px;
+
+    color: var(--text);
+
+}
+
+.payment-success-overlay {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(15, 23, 42, .6);
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 2000;
+
+}
+
+.payment-success-overlay.show {
+
+    display: flex;
+
+}
+
+.payment-success-card {
+
+    background: var(--card);
+
+    border-radius: 18px;
+
+    padding: 44px 36px;
+
+    max-width: 380px;
+
+    text-align: center;
+
+    box-shadow: var(--shadow);
+
+}
+
+.payment-success-card i {
+
+    font-size: 52px;
+
+    color: var(--success);
+
+    margin-bottom: 16px;
+
+}
+
+.payment-success-card h2 {
+
+    margin-bottom: 10px;
+
+}
+
+.payment-success-card p {
+
+    margin-bottom: 24px;
+
+}
+
+.payment-success-card .btn {
+
+    display: inline-block;
+
+    border: none;
+
+    cursor: pointer;
+
+}
+
+/* ===========================================
+   CURRENT PLAN CARD (Settings page)
+=========================================== */
+
+.current-plan-card {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 16px;
+
+    background: var(--card);
+
+    border-radius: 16px;
+
+    padding: 26px 30px;
+
+    box-shadow: var(--shadow);
+
+    max-width: 600px;
+
+}
+
+.current-plan-info h3 {
+
+    font-size: 13px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .5px;
+
+    color: var(--gray);
+
+    margin-bottom: 6px;
+
+}
+
+.current-plan-name {
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    color: var(--primary);
+
+}
+
+.current-plan-card .btn-outline {
+
+    display: inline-block;
+
+    padding: 12px 22px;
+
+    border: 2px solid var(--primary);
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: var(--primary);
+
+    font-weight: 600;
+
+    font-size: 14px;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    margin-left: 0;
+
+    transition: .25s;
+
+}
+
+.current-plan-card .btn-outline:hover {
+
+    background: var(--primary);
+
+    color: white;
+
+}
+
+@media(max-width: 900px) {
+
+    .pricing-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .payment-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+/* ===========================================
+   DARK MODE — pricing / payment / plan card
+=========================================== */
+
+.dark-mode .pricing-card,
+.dark-mode .payment-form-box,
+.dark-mode .order-summary-box,
+.dark-mode .payment-success-card,
+.dark-mode .current-plan-card {
+
+    background: #1e293b;
+
+}
+
+.dark-mode .plan-features li,
+.dark-mode .summary-perks li {
+
+    color: #e2e8f0;
+
+}
+
+.dark-mode .price .amount,
+.dark-mode .summary-total b {
+
+    color: #f8fafc;
+
+}
+
+.dark-mode .payment-method-btn {
+
+    background: #0f172a;
+
+    border-color: #0f172a;
+
+    color: #94a3b8;
+
+}
+
+.dark-mode .payment-method-btn.active {
+
+    background: #1e1b4b;
+
+    border-color: var(--primary);
+
+    color: #c7d2fe;
+
+}
+
+.dark-mode .summary-perks {
+
+    border-color: #334155;
+
+}
+
+.dark-mode .billing-switch {
+
+    background: #334155;
 
 }

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <title>TaskFlow | Payment</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    </script>
+
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-list-check"></i>
+
+        TaskFlow
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+
+        <li><a href="dashboard.html">Dashboard</a></li>
+
+        <li><a href="projects.html">Projects</a></li>
+
+        <li><a href="tasks.html">Tasks</a></li>
+
+        <li><a href="kanban.html">Kanban</a></li>
+
+        <li><a href="team.html">Team</a></li>
+
+        <li><a href="calendar.html">Calendar</a></li>
+
+        <li><a href="analytics.html">Analytics</a></li>
+
+        <li><a href="notifications.html">Notifications</a></li>
+
+        <li><a href="settings.html">Settings</a></li>
+      </ul>
+
+      <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </nav>
+
+    <section class="page-header">
+      <h1>Checkout</h1>
+
+      <p>Review your plan and complete a demo payment.</p>
+    </section>
+
+    <section class="payment-container">
+      <div class="payment-form-box">
+        <h2>Payment Details</h2>
+
+        <div class="payment-methods">
+          <button class="payment-method-btn active" data-method="card">
+            <i class="fa-solid fa-credit-card"></i>
+            Card
+          </button>
+
+          <button class="payment-method-btn" data-method="paypal">
+            <i class="fa-brands fa-paypal"></i>
+            PayPal
+          </button>
+
+          <button class="payment-method-btn" data-method="upi">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            UPI
+          </button>
+        </div>
+
+        <form id="paymentForm">
+          <div class="payment-fields" id="cardFields">
+            <input type="text" id="cardName" placeholder="Name on card" />
+
+            <input
+              type="text"
+              id="cardNumber"
+              placeholder="Card number"
+              maxlength="19"
+            />
+
+            <div class="field-row">
+              <input type="text" id="cardExpiry" placeholder="MM / YY" maxlength="7" />
+
+              <input type="text" id="cardCvv" placeholder="CVV" maxlength="4" />
+            </div>
+          </div>
+
+          <div class="payment-fields hidden" id="paypalFields">
+            <input type="email" id="paypalEmail" placeholder="PayPal email address" />
+
+            <p class="field-hint">
+              You'll be redirected to PayPal to approve this payment.
+              (Demo only — no redirect will actually happen.)
+            </p>
+          </div>
+
+          <div class="payment-fields hidden" id="upiFields">
+            <input type="text" id="upiId" placeholder="yourname@upi" />
+
+            <p class="field-hint">
+              Enter the UPI ID linked to your bank account.
+            </p>
+          </div>
+
+          <button type="submit" class="btn pay-btn" id="payBtn">
+            <i class="fa-solid fa-lock"></i>
+            Pay Now
+          </button>
+
+          <p class="demo-note">
+            <i class="fa-solid fa-circle-info"></i>
+            Demo checkout — no real charge will be made.
+          </p>
+        </form>
+      </div>
+
+      <div class="order-summary-box">
+        <h2>Order Summary</h2>
+
+        <div id="summaryContent"></div>
+      </div>
+    </section>
+
+    <div class="payment-success-overlay" id="successOverlay">
+      <div class="payment-success-card">
+        <i class="fa-solid fa-circle-check"></i>
+
+        <h2>Payment Successful</h2>
+
+        <p id="successMessage">You're now on the Pro plan.</p>
+
+        <a href="dashboard.html" class="btn">Go to Dashboard</a>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2026 TaskFlow</p>
+    </footer>
+
+    <script src="theme.js"></script>
+    <script src="payment.js"></script>
+  </body>
+</html>
