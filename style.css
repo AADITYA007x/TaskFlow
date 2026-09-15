@@ -2802,9 +2802,21 @@ select {
 
 .pricing-card .choose-plan:disabled {
 
-    opacity: .7;
+    border-color: #cbd5e1;
 
-    cursor: default;
+    color: #94a3b8;
+
+    background: #f8fafc;
+
+    cursor: not-allowed;
+
+}
+
+.pricing-card .choose-plan:disabled:hover {
+
+    background: #f8fafc;
+
+    color: #94a3b8;
 
 }
 
@@ -3330,6 +3342,16 @@ select {
 .dark-mode .summary-perks li {
 
     color: #e2e8f0;
+
+}
+
+.dark-mode .pricing-card .choose-plan:disabled {
+
+    border-color: #334155;
+
+    color: #64748b;
+
+    background: #0f172a;
 
 }
 
