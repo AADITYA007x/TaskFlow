@@ -1834,24 +1834,36 @@ KANBAN
 
 }
 
-.todo {
+.kanban-column.todo {
 
     border-top: 6px solid #2563eb;
 
 }
 
-.progress {
+.kanban-column.in-progress {
 
     border-top: 6px solid #f59e0b;
 
 }
 
-.completed {
+.kanban-column.completed {
 
     border-top: 6px solid #22c55e;
 
 }
+/* ===========================================
+   KANBAN BADGE (dark mode)
+=========================================== */
 
+.dark-mode .kanban-badge {
+
+    background: #312e81;
+
+    color: #c7d2fe;
+
+    filter: none;
+
+}
 .kanban-card {
 
     background: white;
